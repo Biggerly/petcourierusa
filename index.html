@@ -503,4 +503,505 @@
             flex: 1;
             padding: 12px 15px;
             border: 1px solid var(--light-gray);
-            border-radius: var(-
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .tracking-status {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .status-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .status-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: var(--gray);
+        }
+        
+        .status-icon.active {
+            background-color: var(--success);
+            color: white;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-buttons {
+                display: none;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .features, .testimonials {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .phone-number {
+                font-size: 26px;
+            }
+            
+            .chat-window {
+                width: 90%;
+                right: 5%;
+                height: 400px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-paw logo-icon"></i>
+                <div class="logo-text">Pet<span>Courier</span>USA</div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pets.html">Buy a Pet</a></li>
+                    <li><a href="#" id="trackOrderBtn">Track Delivery</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="pets.html" class="btn btn-primary">Shop Pets</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Trusted Pet Sales & Safe Delivery Services</h1>
+            <p>Across Georgia, United States. U.S. licensed, insured, and based in Georgia. We provide secure payments, verified breeders, and insured transport for your peace of mind.</p>
+            
+            <div class="hero-buttons">
+                <a href="pets.html" class="btn btn-primary btn-large">BUY A PET</a>
+                <a href="#" class="btn btn-secondary btn-large" id="heroTrackBtn">TRACK DELIVERY</a>
+                <a href="tel:1-800-123-4567" class="btn btn-outline">EMERGENCY SUPPORT</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>100% Secure Payments</h3>
+                    <p>Your transactions are protected with industry-leading security and encryption.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-user-check feature-icon"></i>
+                    <h3>Verified Breeders</h3>
+                    <p>All our breeders are thoroughly vetted to ensure healthy, happy pets.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-truck feature-icon"></i>
+                    <h3>Insured Transport</h3>
+                    <p>Every delivery is fully insured for your pet's safety and your peace of mind.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-headset feature-icon"></i>
+                    <h3>24/7 Emergency Support</h3>
+                    <p>Round-the-clock assistance for any urgent needs during transport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I couldn't be happier with my new puppy and the smooth delivery process! The team kept me updated every step of the way and my puppy arrived happy and healthy."</p>
+                
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                
+                <p class="customer-name">Jane Smith</p>
+                <p>Atlanta, GA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Support -->
+    <section class="emergency">
+        <div class="container">
+            <h2>24/7 EMERGENCY SUPPORT HOTLINE</h2>
+            <p>If you have any concerns about your pet during transport, our emergency support team is available around the clock to assist you.</p>
+            
+            <a href="tel:1-800-123-4567" class="phone-number">
+                <i class="fas fa-phone-alt"></i> 1-800-123-4567
+            </a>
+            
+            <a href="contact.html" class="btn btn-secondary">Contact Support</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Pet Courier USA</h3>
+                    <p>Trusted pet sales and safe delivery services across Georgia, United States.</p>
+                    <p>U.S. licensed, insured, and based in Georgia.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pets.html">Buy a Pet</a></li>
+                        <li><a href="#" id="footerTrackBtn">Track Delivery</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="pets.html">Pet Sales</a></li>
+                        <li><a href="delivery.html">Delivery Services</a></li>
+                        <li><a href="insurance.html">Transport Insurance</a></li>
+                        <li><a href="breeders.html">Breeder Verification</a></li>
+                        <li><a href="emergency.html">Emergency Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone-alt"></i> 1-800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@petcourierusa.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Atlanta, Georgia, USA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Pet Courier USA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-button" id="chatButton">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Live Chat Support</h3>
+                <button class="close-chat" id="closeChat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message message-in">
+                    Hello! Welcome to Pet Courier USA. How can we help you today?
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Tracking Modal -->
+    <div class="modal" id="trackingModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2>Track Your Delivery</h2>
+            <p>Enter your order number or tracking ID to check the status of your pet delivery.</p>
+            
+            <div class="tracking-form">
+                <input type="text" id="trackingNumber" placeholder="Enter order or tracking number">
+                <button class="btn btn-primary" id="trackBtn">Track</button>
+            </div>
+            
+            <div class="tracking-status" id="trackingStatus" style="display: none;">
+                <h3>Order Status: <span id="orderStatus">In Transit</span></h3>
+                <p>Order #: <strong id="displayOrderNumber">PC-789456123</strong></p>
+                <p>Pet: <strong>Golden Retriever Puppy</strong></p>
+                <p>Estimated Delivery: <strong>May 15, 2023</strong></p>
+                
+                <h4>Delivery Progress:</h4>
+                <div class="status-item">
+                    <div class="status-icon active">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <p><strong>Order Confirmed</strong></p>
+                        <p>May 5, 2023 10:30 AM</p>
+                    </div>
+                </div>
+                
+                <div class="status-item">
+                    <div class="status-icon active">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <p><strong>Health Check Completed</strong></p>
+                        <p>May 8, 2023 2:15 PM</p>
+                    </div>
+                </div>
+                
+                <div class="status-item">
+                    <div class="status-icon active">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <p><strong>Departure from Breeder</strong></p>
+                        <p>May 10, 2023 9:00 AM</p>
+                    </div>
+                </div>
+                
+                <div class="status-item">
+                    <div class="status-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div>
+                        <p><strong>In Transit</strong></p>
+                        <p>Expected arrival: May 15, 2023</p>
+                    </div>
+                </div>
+                
+                <div class="status-item">
+                    <div class="status-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div>
+                        <p><strong>Delivery</strong></p>
+                        <p>Your pet will be delivered to your address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px';
+                navMenu.style.left = '0';
+                navMenu.style.width = '100%';
+                navMenu.style.backgroundColor = 'white';
+                navMenu.style.padding = '20px';
+                navMenu.style.boxShadow = '0 10px 15px rgba(0,0,0,0.1)';
+                navMenu.style.gap = '15px';
+            }
+        });
+
+        // Order tracking modal
+        const trackOrderBtn = document.getElementById('trackOrderBtn');
+        const heroTrackBtn = document.getElementById('heroTrackBtn');
+        const footerTrackBtn = document.getElementById('footerTrackBtn');
+        const trackingModal = document.getElementById('trackingModal');
+        const closeModal = document.getElementById('closeModal');
+        const trackBtn = document.getElementById('trackBtn');
+        const trackingStatus = document.getElementById('trackingStatus');
+        const displayOrderNumber = document.getElementById('displayOrderNumber');
+
+        function openTrackingModal() {
+            trackingModal.style.display = 'flex';
+        }
+
+        function closeTrackingModal() {
+            trackingModal.style.display = 'none';
+        }
+
+        trackOrderBtn.addEventListener('click', openTrackingModal);
+        heroTrackBtn.addEventListener('click', openTrackingModal);
+        footerTrackBtn.addEventListener('click', openTrackingModal);
+        closeModal.addEventListener('click', closeTrackingModal);
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === trackingModal) {
+                closeTrackingModal();
+            }
+        });
+
+        // Track order functionality
+        trackBtn.addEventListener('click', function() {
+            const trackingNumber = document.getElementById('trackingNumber').value;
+            
+            if (trackingNumber.trim() === '') {
+                alert('Please enter a tracking number');
+                return;
+            }
+            
+            // Show tracking status with entered tracking number
+            displayOrderNumber.textContent = trackingNumber;
+            trackingStatus.style.display = 'block';
+            
+            // Scroll to tracking status
+            trackingStatus.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Live chat functionality
+        const chatButton = document.getElementById('chatButton');
+        const chatWindow = document.getElementById('chatWindow');
+        const closeChat = document.getElementById('closeChat');
+        const sendMessage = document.getElementById('sendMessage');
+        const chatInput = document.getElementById('chatInput');
+        const chatBody = document.getElementById('chatBody');
+
+        chatButton.addEventListener('click', function() {
+            if (chatWindow.style.display === 'flex') {
+                chatWindow.style.display = 'none';
+            } else {
+                chatWindow.style.display = 'flex';
+            }
+        });
+
+        closeChat.addEventListener('click', function() {
+            chatWindow.style.display = 'none';
+        });
+
+        function addMessage(text, isIncoming) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${isIncoming ? 'message-in' : 'message-out'}`;
+            messageDiv.textContent = text;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        sendMessage.addEventListener('click', function() {
+            const message = chatInput.value.trim();
+            
+            if (message === '') return;
+            
+            // Add user message
+            addMessage(message, false);
+            
+            // Clear input
+            chatInput.value = '';
+            
+            // Simulate bot response after a delay
+            setTimeout(function() {
+                const responses = [
+                    "Thank you for your message. Our support team will respond shortly.",
+                    "Can you provide your order number so I can help you better?",
+                    "Is this related to a current delivery or a future order?",
+                    "I can help you with tracking, emergency support, or general questions. What do you need assistance with?"
+                ];
+                
+                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                addMessage(randomResponse, true);
+            }, 1000);
+        });
+
+        // Allow sending message with Enter key
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage.click();
+            }
+        });
+
+        // Sample tracking number suggestion
+        document.getElementById('trackingNumber').placeholder = "Try: PC-789456123";
+    </script>
+</body>
+</html>
