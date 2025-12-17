@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Courier USA | Trusted Pet Sales & Safe Delivery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4a6fa5;
-            --primary-dark: #3a5980;
-            --secondary: #ff914d;
-            --light: #f8f9fa;
-            --dark: #333;
-            --gray: #6c757d;
-            --light-gray: #e9ecef;
-            --success: #28a745;
-            --border-radius: 8px;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --primary: #5d9cec;
+            --primary-light: #8bb9f0;
+            --primary-dark: #4a89dc;
+            --secondary: #ff9f80;
+            --secondary-light: #ffb399;
+            --accent: #a0d9b4;
+            --accent-dark: #8cc7a1;
+            --light: #f9f7fc;
+            --light-pink: #fff5f7;
+            --dark: #4a4a4a;
+            --gray: #8a8a8a;
+            --light-gray: #f0f0f0;
+            --border-radius: 16px;
+            --border-radius-sm: 10px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --box-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
         
         * {
@@ -28,111 +36,194 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--dark);
-            background-color: #fff;
+            background-color: var(--light);
+            overflow-x: hidden;
         }
         
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
+        }
+        
+        /* Cute decorative elements */
+        .paw-print {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.1;
+            z-index: -1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235d9cec'%3E%3Cpath d='M12 2c2.21 0 4 1.79 4 4 0 1.5-.8 2.77-2 3.46v-1.22c.61-.55 1-1.35 1-2.24 0-1.66-1.34-3-3-3s-3 1.34-3 3c0 .89.39 1.69 1 2.24v1.22C8.8 8.77 8 7.5 8 6c0-2.21 1.79-4 4-4zm-6 9c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm12 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm-6-5c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+            z-index: -1;
         }
         
         /* Header & Navigation */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 3px solid var(--light-gray);
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 18px 0;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
         }
         
         .logo-icon {
-            color: var(--primary);
-            font-size: 28px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(93, 156, 236, 0.3);
         }
         
         .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 24px;
-            color: var(--primary);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 28px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
         }
         
-        .logo-text span {
-            color: var(--secondary);
+        .logo-subtext {
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 1px;
+            margin-top: -5px;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 35px;
         }
         
         nav a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
+            font-weight: 600;
             font-size: 16px;
-            transition: color 0.3s;
+            position: relative;
+            padding: 8px 0;
+            transition: var(--transition);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 3px;
+            transition: var(--transition);
         }
         
         nav a:hover {
             color: var(--primary);
         }
         
+        nav a:hover:after {
+            width: 100%;
+        }
+        
         .nav-buttons {
             display: flex;
             gap: 15px;
+            align-items: center;
         }
         
         .btn {
-            display: inline-block;
-            padding: 10px 22px;
-            border-radius: var(--border-radius);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--border-radius-sm);
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             border: none;
             font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover:before {
+            left: 100%;
         }
         
         .btn-primary {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
+            box-shadow: 0 5px 15px rgba(93, 156, 236, 0.3);
         }
         
         .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(93, 156, 236, 0.4);
         }
         
         .btn-secondary {
-            background-color: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary), #ff7a5a);
             color: white;
+            box-shadow: 0 5px 15px rgba(255, 159, 128, 0.3);
         }
         
         .btn-secondary:hover {
-            background-color: #e58242;
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 159, 128, 0.4);
         }
         
         .btn-outline {
@@ -144,6 +235,18 @@
         .btn-outline:hover {
             background-color: var(--primary);
             color: white;
+            transform: translateY(-3px);
+        }
+        
+        .btn-cute {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            box-shadow: 0 5px 15px rgba(160, 217, 180, 0.3);
+        }
+        
+        .btn-cute:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(160, 217, 180, 0.4);
         }
         
         .mobile-menu-btn {
@@ -153,163 +256,475 @@
             border: none;
             color: var(--primary);
             cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(93, 156, 236, 0.1);
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            background-color: rgba(93, 156, 236, 0.2);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
-            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f9f7fc 0%, #eef5ff 100%);
+        }
+        
+        .hero .paw-print:nth-child(1) {
+            top: 20%;
+            left: 5%;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .hero .paw-print:nth-child(2) {
+            bottom: 30%;
+            right: 8%;
+            width: 80px;
+            height: 80px;
+            transform: rotate(45deg);
+        }
+        
+        .hero .bubble:nth-child(3) {
+            top: 15%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+        }
+        
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-lg);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+        
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .hero-image:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            z-index: -1;
+            opacity: 0.3;
         }
         
         .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: var(--primary);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .hero p {
-            font-size: 18px;
+            font-size: 19px;
             color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto 30px;
+            max-width: 600px;
+            margin-bottom: 35px;
         }
         
         .hero-buttons {
             display: flex;
-            justify-content: center;
             gap: 20px;
-            margin-top: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
         }
         
         /* Features Section */
         .features {
-            padding: 80px 0;
-            background-color: var(--light);
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .features .paw-print:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            transform: rotate(20deg);
         }
         
         .section-title {
             text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            margin-bottom: 50px;
-            color: var(--primary);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 60px;
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
         
         .feature-card {
             background: white;
             border-radius: var(--border-radius);
-            padding: 30px;
+            padding: 40px 30px;
             box-shadow: var(--box-shadow);
             text-align: center;
-            transition: transform 0.3s;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transition: var(--transition);
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .feature-card:hover:before {
+            width: 100%;
+            opacity: 0.05;
         }
         
         .feature-icon {
-            font-size: 48px;
+            font-size: 54px;
+            margin-bottom: 25px;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .feature-card h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        
+        /* Pet Showcase */
+        .pet-showcase {
+            padding: 100px 0;
+            background-color: var(--light-pink);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pet-showcase .bubble:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 159, 128, 0.2), rgba(255, 159, 128, 0.05));
+        }
+        
+        .pet-showcase .bubble:nth-child(2) {
+            bottom: 10%;
+            right: 5%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at 30% 30%, rgba(160, 217, 180, 0.2), rgba(160, 217, 180, 0.05));
+        }
+        
+        .pets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pet-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .pet-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .pet-card:hover .pet-img {
+            transform: scale(1.05);
+        }
+        
+        .pet-img {
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .pet-info {
+            padding: 25px;
+        }
+        
+        .pet-name {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+        
+        .pet-breed {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .pet-price {
+            font-size: 24px;
+            font-weight: 800;
             color: var(--primary);
             margin-bottom: 20px;
         }
         
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
+        .pet-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--secondary), #ff7a5a);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(255, 159, 128, 0.3);
         }
         
         /* Testimonials */
         .testimonials {
-            padding: 80px 0;
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
         }
         
         .testimonial-card {
             background: white;
             border-radius: var(--border-radius);
-            padding: 30px;
+            padding: 40px;
             box-shadow: var(--box-shadow);
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            border: 1px solid rgba(93, 156, 236, 0.1);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 120px;
+            font-family: serif;
+            color: rgba(93, 156, 236, 0.1);
+            line-height: 1;
         }
         
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 20px;
-            font-size: 18px;
+            margin-bottom: 25px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
         }
         
         .stars {
             color: #ffc107;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .customer-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
         }
         
         .customer-name {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary);
+            font-size: 18px;
+        }
+        
+        .customer-location {
+            color: var(--gray);
+            font-size: 14px;
         }
         
         /* Emergency Section */
         .emergency {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .emergency:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
         }
         
         .emergency h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 46px;
             margin-bottom: 20px;
+            position: relative;
         }
         
         .emergency p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 700px;
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            opacity: 0.9;
         }
         
         .phone-number {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 42px;
+            font-weight: 900;
             color: white;
             text-decoration: none;
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 40px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+        
+        .phone-number:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .phone-number i {
+            margin-right: 15px;
+            color: var(--secondary-light);
         }
         
         /* Footer */
         footer {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 30px;
+            position: relative;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 60px;
         }
         
         .footer-column h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: var(--secondary-light);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 3px;
+        }
+        
+        .footer-column p {
+            color: #bbb;
             margin-bottom: 20px;
-            color: var(--secondary);
+            line-height: 1.8;
         }
         
         .footer-column ul {
@@ -317,25 +732,56 @@
         }
         
         .footer-column ul li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .footer-column a {
             color: #ddd;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .footer-column a:hover {
-            color: var(--secondary);
+            color: var(--secondary-light);
+            transform: translateX(5px);
+        }
+        
+        .footer-column a i {
+            color: var(--accent);
+            width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
         }
         
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
-            font-size: 14px;
+            font-size: 15px;
         }
         
         /* Live Chat Widget */
@@ -347,41 +793,86 @@
         }
         
         .chat-button {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            background-color: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary), #ff7a5a);
             color: white;
             border: none;
-            font-size: 24px;
+            font-size: 28px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(255, 159, 128, 0.4);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chat-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), transparent);
+            opacity: 0;
+            transition: var(--transition);
         }
         
         .chat-button:hover {
-            background-color: #e58242;
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 30px rgba(255, 159, 128, 0.6);
+        }
+        
+        .chat-button:hover:before {
+            opacity: 1;
+        }
+        
+        .chat-button.pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 159, 128, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 159, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 159, 128, 0); }
         }
         
         .chat-window {
             position: absolute;
-            bottom: 80px;
+            bottom: 90px;
             right: 0;
-            width: 350px;
-            height: 500px;
+            width: 380px;
+            height: 550px;
             background-color: white;
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--box-shadow-lg);
             display: none;
             flex-direction: column;
             overflow: hidden;
+            border: 1px solid rgba(93, 156, 236, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .chat-window.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+            animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: translateY(20px) scale(0.8); opacity: 0; }
+            70% { transform: translateY(-10px) scale(1.05); opacity: 1; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
         }
         
         .chat-header {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 15px 20px;
+            padding: 20px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -389,43 +880,87 @@
         
         .chat-header h3 {
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chat-header h3:before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #4cd964;
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
         
         .close-chat {
-            background: none;
+            background: rgba(255, 255, 255, 0.2);
             border: none;
             color: white;
-            font-size: 20px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
             cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-chat:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
         }
         
         .chat-body {
             flex: 1;
-            padding: 20px;
+            padding: 25px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
+            background-color: #fafafa;
         }
         
         .chat-message {
-            margin-bottom: 15px;
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 18px;
+            margin-bottom: 20px;
+            max-width: 85%;
+            padding: 15px 20px;
+            border-radius: 22px;
+            position: relative;
+            line-height: 1.5;
+            animation: messageIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes messageIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         
         .message-in {
             align-self: flex-start;
-            background-color: var(--light-gray);
+            background-color: white;
             border-bottom-left-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .message-out {
             align-self: flex-end;
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border-bottom-right-radius: 5px;
+            box-shadow: 0 5px 15px rgba(93, 156, 236, 0.2);
+        }
+        
+        .message-time {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: right;
         }
         
         .chat-input {
@@ -433,24 +968,39 @@
             border-top: 1px solid var(--light-gray);
             display: flex;
             gap: 10px;
+            background-color: white;
         }
         
         .chat-input input {
             flex: 1;
-            padding: 12px 15px;
+            padding: 15px 20px;
             border: 1px solid var(--light-gray);
             border-radius: 30px;
             font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+        
+        .chat-input input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(93, 156, 236, 0.1);
         }
         
         .chat-input button {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border: none;
             cursor: pointer;
+            transition: var(--transition);
+            font-size: 18px;
+        }
+        
+        .chat-input button:hover {
+            transform: scale(1.1) rotate(10deg);
         }
         
         /* Order Tracking Modal */
@@ -465,60 +1015,118 @@
             z-index: 2000;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         .modal-content {
             background-color: white;
             border-radius: var(--border-radius);
             width: 90%;
-            max-width: 600px;
-            padding: 30px;
+            max-width: 700px;
+            padding: 40px;
             position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            animation: modalIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes modalIn {
+            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
         }
         
         .close-modal {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 24px;
+            top: 20px;
+            right: 25px;
+            font-size: 28px;
             background: none;
             border: none;
             cursor: pointer;
             color: var(--gray);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--primary);
         }
         
         .modal h2 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Nunito', sans-serif;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 36px;
+        }
+        
+        .modal p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 17px;
         }
         
         .tracking-form {
             display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 15px;
+            margin-bottom: 40px;
         }
         
         .tracking-form input {
             flex: 1;
-            padding: 12px 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: var(--border-radius);
+            padding: 18px 25px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--border-radius-sm);
             font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .tracking-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(93, 156, 236, 0.2);
         }
         
         .tracking-status {
-            background-color: var(--light);
-            padding: 20px;
+            background: linear-gradient(135deg, #f9f9f9, #f0f7ff);
+            padding: 30px;
             border-radius: var(--border-radius);
-            margin-top: 20px;
+            margin-top: 30px;
+            border: 1px solid rgba(93, 156, 236, 0.1);
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .status-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
@@ -529,26 +1137,178 @@
         }
         
         .status-icon {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background-color: var(--light-gray);
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 15px;
+            margin-right: 20px;
             color: var(--gray);
+            font-size: 20px;
+            flex-shrink: 0;
+            transition: var(--transition);
         }
         
         .status-icon.active {
-            background-color: var(--success);
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
             color: white;
+            box-shadow: 0 5px 15px rgba(160, 217, 180, 0.3);
+        }
+        
+        .status-icon.current {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 5px 15px rgba(93, 156, 236, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        .status-details h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .status-details p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 15px;
+        }
+        
+        /* Floating Animals */
+        .floating-animal {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            z-index: -1;
+            opacity: 0.7;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(20px) rotate(-5deg); }
+        }
+        
+        .floating-animal.dog {
+            top: 10%;
+            left: 3%;
+            animation-delay: 0s;
+        }
+        
+        .floating-animal.cat {
+            bottom: 20%;
+            right: 5%;
+            animation-delay: 5s;
+            animation-duration: 25s;
         }
         
         /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .hero-image img {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+        }
+        
         @media (max-width: 992px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul, .nav-buttons {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
             .hero h1 {
                 font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 17px;
+            }
+            
+            .features, .pet-showcase, .testimonials {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .emergency h2 {
+                font-size: 36px;
+            }
+            
+            .phone-number {
+                font-size: 32px;
+                padding: 15px 25px;
+            }
+            
+            .chat-window {
+                width: 90%;
+                right: 5%;
+                height: 450px;
+            }
+            
+            .modal-content {
+                padding: 30px 25px;
+            }
+            
+            .tracking-form {
+                flex-direction: column;
+            }
+            
+            .floating-animal {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 32px;
             }
             
             .hero-buttons {
@@ -561,66 +1321,49 @@
                 width: 100%;
                 max-width: 300px;
             }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
+            
+            .feature-card, .pet-card, .testimonial-card {
+                padding: 30px 20px;
             }
             
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-buttons {
-                display: none;
-            }
-            
-            .hero {
-                padding: 60px 0;
-            }
-            
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .features, .testimonials {
-                padding: 60px 0;
-            }
-            
-            .section-title {
-                font-size: 28px;
+            .emergency h2 {
+                font-size: 30px;
             }
             
             .phone-number {
                 font-size: 26px;
             }
             
-            .chat-window {
-                width: 90%;
-                right: 5%;
-                height: 400px;
-            }
-            
-            .modal-content {
-                width: 95%;
-                padding: 20px;
+            .chat-button {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Decorative floating animals -->
+    <div class="floating-animal dog">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Dog" style="width: 100%; height: 100%; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));">
+    </div>
+    
+    <div class="floating-animal cat">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616430.png" alt="Cat" style="width: 100%; height: 100%; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));">
+    </div>
+    
     <!-- Header & Navigation -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-paw logo-icon"></i>
-                <div class="logo-text">Pet<span>Courier</span>USA</div>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <div>
+                    <div class="logo-text">PetCourierUSA</div>
+                    <div class="logo-subtext">SAFE PET TRANSPORT</div>
+                </div>
+            </a>
             
             <nav>
                 <ul id="navMenu">
@@ -634,55 +1377,136 @@
             </nav>
             
             <div class="nav-buttons">
-                <a href="login.html" class="btn btn-outline">Login</a>
-                <a href="pets.html" class="btn btn-primary">Shop Pets</a>
+                <a href="login.html" class="btn btn-outline">
+                    <i class="fas fa-user"></i> Login
+                </a>
+                <a href="pets.html" class="btn btn-primary">
+                    <i class="fas fa-paw"></i> Shop Pets
+                </a>
             </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="paw-print"></div>
+        <div class="paw-print"></div>
+        <div class="bubble"></div>
+        
         <div class="container">
-            <h1>Trusted Pet Sales & Safe Delivery Services</h1>
-            <p>Across Georgia, United States. U.S. licensed, insured, and based in Georgia. We provide secure payments, verified breeders, and insured transport for your peace of mind.</p>
-            
-            <div class="hero-buttons">
-                <a href="pets.html" class="btn btn-primary btn-large">BUY A PET</a>
-                <a href="#" class="btn btn-secondary btn-large" id="heroTrackBtn">TRACK DELIVERY</a>
-                <a href="tel:1-800-123-4567" class="btn btn-outline">EMERGENCY SUPPORT</a>
+            <div class="hero-container">
+                <div class="hero-content animate__animated animate__fadeInLeft">
+                    <h1>Trusted Pet Sales & Safe Delivery Services</h1>
+                    <p>Across Georgia, United States. We provide 100% secure payments, verified breeders, and insured transport for your peace of mind. Your furry family members deserve the best care during their journey to you.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="pets.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-shopping-cart"></i> BUY A PET
+                        </a>
+                        <a href="#" class="btn btn-secondary btn-large" id="heroTrackBtn">
+                            <i class="fas fa-map-marked-alt"></i> TRACK DELIVERY
+                        </a>
+                        <a href="tel:1-800-123-4567" class="btn btn-cute">
+                            <i class="fas fa-phone-alt"></i> EMERGENCY SUPPORT
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image animate__animated animate__fadeInRight">
+                    <img src="https://images.unsplash.com/photo-1554456854-55a089fd4cb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Happy puppy with family">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
+        <div class="paw-print"></div>
+        
         <div class="container">
-            <h2 class="section-title">Why Choose Us</h2>
+            <h2 class="section-title animate__animated animate__fadeInUp">Why Choose Us</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">U.S. licensed, insured, and based in Georgia. We're committed to providing the safest, most caring transport for your new family member.</p>
             
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
                     <i class="fas fa-shield-alt feature-icon"></i>
                     <h3>100% Secure Payments</h3>
-                    <p>Your transactions are protected with industry-leading security and encryption.</p>
+                    <p>Your transactions are protected with industry-leading security and encryption. We use secure payment gateways for all transactions.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
                     <i class="fas fa-user-check feature-icon"></i>
                     <h3>Verified Breeders</h3>
-                    <p>All our breeders are thoroughly vetted to ensure healthy, happy pets.</p>
+                    <p>All our breeders are thoroughly vetted and certified to ensure healthy, happy, and ethically-raised pets.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
                     <i class="fas fa-truck feature-icon"></i>
                     <h3>Insured Transport</h3>
-                    <p>Every delivery is fully insured for your pet's safety and your peace of mind.</p>
+                    <p>Every delivery is fully insured for your pet's safety and your peace of mind. Climate-controlled vehicles and trained handlers.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
                     <i class="fas fa-headset feature-icon"></i>
                     <h3>24/7 Emergency Support</h3>
-                    <p>Round-the-clock assistance for any urgent needs during transport.</p>
+                    <p>Round-the-clock assistance for any urgent needs during transport. We're always here when you need us.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Showcase -->
+    <section class="pet-showcase">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp">Featured Pets</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">Find your perfect companion from our selection of healthy, happy pets ready for their forever homes.</p>
+            
+            <div class="pets-grid">
+                <div class="pet-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <div class="pet-tag">Available</div>
+                    <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Golden Retriever Puppy" class="pet-img">
+                    <div class="pet-info">
+                        <div class="pet-name">Sunny</div>
+                        <span class="pet-breed">Golden Retriever</span>
+                        <div class="pet-price">$1,200</div>
+                        <a href="pets.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="pet-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="pet-tag">Reserved</div>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6d03bde4ba4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="British Shorthair Cat" class="pet-img">
+                    <div class="pet-info">
+                        <div class="pet-name">Luna</div>
+                        <span class="pet-breed">British Shorthair</span>
+                        <div class="pet-price">$800</div>
+                        <a href="pets.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="pet-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                    <div class="pet-tag">Available</div>
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="German Shepherd Puppy" class="pet-img">
+                    <div class="pet-info">
+                        <div class="pet-name">Max</div>
+                        <span class="pet-breed">German Shepherd</span>
+                        <div class="pet-price">$1,500</div>
+                        <a href="pets.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="pets.html" class="btn btn-secondary" style="padding: 16px 40px; font-size: 18px;">
+                    <i class="fas fa-paw"></i> View All Available Pets
+                </a>
             </div>
         </div>
     </section>
@@ -690,10 +1514,11 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
+            <h2 class="section-title animate__animated animate__fadeInUp">What Our Customers Say</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">Hear from happy pet parents who found their perfect companion through our service.</p>
             
-            <div class="testimonial-card">
-                <p class="testimonial-text">"I couldn't be happier with my new puppy and the smooth delivery process! The team kept me updated every step of the way and my puppy arrived happy and healthy."</p>
+            <div class="testimonial-card animate__animated animate__fadeInUp">
+                <p class="testimonial-text">"I couldn't be happier with my new puppy and the smooth delivery process! The team kept me updated every step of the way with photos and videos. My golden retriever arrived happy, healthy, and already socialized. Thank you Pet Courier USA!"</p>
                 
                 <div class="stars">
                     <i class="fas fa-star"></i>
@@ -703,8 +1528,13 @@
                     <i class="fas fa-star"></i>
                 </div>
                 
-                <p class="customer-name">Jane Smith</p>
-                <p>Atlanta, GA</p>
+                <div class="customer-info">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Jane Smith" class="customer-avatar">
+                    <div>
+                        <div class="customer-name">Jane Smith</div>
+                        <div class="customer-location">Atlanta, GA • Received a Golden Retriever</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -712,14 +1542,16 @@
     <!-- Emergency Support -->
     <section class="emergency">
         <div class="container">
-            <h2>24/7 EMERGENCY SUPPORT HOTLINE</h2>
-            <p>If you have any concerns about your pet during transport, our emergency support team is available around the clock to assist you.</p>
+            <h2 class="animate__animated animate__fadeInUp">24/7 EMERGENCY SUPPORT HOTLINE</h2>
+            <p class="animate__animated animate__fadeInUp">If you have any concerns about your pet during transport, our emergency support team is available around the clock to assist you. We treat every pet like family.</p>
             
-            <a href="tel:1-800-123-4567" class="phone-number">
+            <a href="tel:1-800-123-4567" class="phone-number animate__animated animate__pulse animate__infinite">
                 <i class="fas fa-phone-alt"></i> 1-800-123-4567
             </a>
             
-            <a href="contact.html" class="btn btn-secondary">Contact Support</a>
+            <a href="contact.html" class="btn btn-secondary animate__animated animate__fadeInUp" style="padding: 18px 45px; font-size: 18px;">
+                <i class="fas fa-comment-medical"></i> Contact Support Team
+            </a>
         </div>
     </section>
 
@@ -729,51 +1561,60 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Pet Courier USA</h3>
-                    <p>Trusted pet sales and safe delivery services across Georgia, United States.</p>
-                    <p>U.S. licensed, insured, and based in Georgia.</p>
+                    <p>Trusted pet sales and safe delivery services across Georgia, United States. U.S. licensed, insured, and based in Georgia.</p>
+                    <p>We're passionate about connecting loving families with their perfect pets and ensuring a safe, comfortable journey for every animal.</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="pets.html">Buy a Pet</a></li>
-                        <li><a href="#" id="footerTrackBtn">Track Delivery</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="pets.html"><i class="fas fa-chevron-right"></i> Buy a Pet</a></li>
+                        <li><a href="#" id="footerTrackBtn"><i class="fas fa-chevron-right"></i> Track Delivery</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h3>Our Services</h3>
                     <ul>
-                        <li><a href="pets.html">Pet Sales</a></li>
-                        <li><a href="delivery.html">Delivery Services</a></li>
-                        <li><a href="insurance.html">Transport Insurance</a></li>
-                        <li><a href="breeders.html">Breeder Verification</a></li>
-                        <li><a href="emergency.html">Emergency Support</a></li>
+                        <li><a href="pets.html"><i class="fas fa-paw"></i> Pet Sales</a></li>
+                        <li><a href="delivery.html"><i class="fas fa-shipping-fast"></i> Delivery Services</a></li>
+                        <li><a href="insurance.html"><i class="fas fa-file-contract"></i> Transport Insurance</a></li>
+                        <li><a href="breeders.html"><i class="fas fa-user-check"></i> Breeder Verification</a></li>
+                        <li><a href="emergency.html"><i class="fas fa-phone-alt"></i> Emergency Support</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul>
-                        <li><i class="fas fa-phone-alt"></i> 1-800-123-4567</li>
-                        <li><i class="fas fa-envelope"></i> support@petcourierusa.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Atlanta, Georgia, USA</li>
+                        <li><a href="tel:1-800-123-4567"><i class="fas fa-phone-alt"></i> 1-800-123-4567</a></li>
+                        <li><a href="mailto:support@petcourierusa.com"><i class="fas fa-envelope"></i> support@petcourierusa.com</a></li>
+                        <li><a href="https://maps.google.com/?q=Atlanta,Georgia"><i class="fas fa-map-marker-alt"></i> Atlanta, Georgia, USA</a></li>
+                        <li><a href="hours.html"><i class="fas fa-clock"></i> 24/7 Emergency Support</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Pet Courier USA. All rights reserved.</p>
+                <p>&copy; 2023 Pet Courier USA. All rights reserved. | <a href="privacy.html" style="color: #aaa;">Privacy Policy</a> | <a href="terms.html" style="color: #aaa;">Terms of Service</a></p>
+                <p style="margin-top: 10px; font-size: 14px;">Licensed and insured in the state of Georgia. USDA Certified.</p>
             </div>
         </div>
     </footer>
 
     <!-- Live Chat Widget -->
     <div class="chat-widget">
-        <button class="chat-button" id="chatButton">
+        <button class="chat-button pulse" id="chatButton">
             <i class="fas fa-comment-dots"></i>
         </button>
         
@@ -787,12 +1628,17 @@
             
             <div class="chat-body" id="chatBody">
                 <div class="chat-message message-in">
-                    Hello! Welcome to Pet Courier USA. How can we help you today?
+                    <div>Hello! Welcome to Pet Courier USA. I'm Luna, your virtual assistant. 🐾</div>
+                    <div class="message-time">Just now</div>
+                </div>
+                <div class="chat-message message-in">
+                    <div>How can I help you today? I can assist with tracking, orders, or answer any questions about our services.</div>
+                    <div class="message-time">Just now</div>
                 </div>
             </div>
             
             <div class="chat-input">
-                <input type="text" id="chatInput" placeholder="Type your message...">
+                <input type="text" id="chatInput" placeholder="Type your message here...">
                 <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
@@ -805,28 +1651,37 @@
                 <i class="fas fa-times"></i>
             </button>
             
-            <h2>Track Your Delivery</h2>
-            <p>Enter your order number or tracking ID to check the status of your pet delivery.</p>
+            <h2>Track Your Pet's Delivery</h2>
+            <p>Enter your order number or tracking ID to check the status of your pet's delivery journey. We'll show you every step of the way!</p>
             
             <div class="tracking-form">
-                <input type="text" id="trackingNumber" placeholder="Enter order or tracking number">
-                <button class="btn btn-primary" id="trackBtn">Track</button>
+                <input type="text" id="trackingNumber" placeholder="Enter order or tracking number (e.g., PC-789456123)">
+                <button class="btn btn-primary" id="trackBtn">
+                    <i class="fas fa-search"></i> Track
+                </button>
             </div>
             
-            <div class="tracking-status" id="trackingStatus" style="display: none;">
-                <h3>Order Status: <span id="orderStatus">In Transit</span></h3>
-                <p>Order #: <strong id="displayOrderNumber">PC-789456123</strong></p>
-                <p>Pet: <strong>Golden Retriever Puppy</strong></p>
-                <p>Estimated Delivery: <strong>May 15, 2023</strong></p>
+            <div class="tracking-status" id="trackingStatus">
+                <div class="status-header">
+                    <div>
+                        <h3 style="margin: 0; color: var(--primary);">Order Status: <span id="orderStatus" style="color: var(--accent-dark);">In Transit</span></h3>
+                        <p style="margin: 5px 0 0; color: var(--gray);">Order #: <strong id="displayOrderNumber">PC-789456123</strong></p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; color: var(--gray);">Pet: <strong>Golden Retriever Puppy</strong></p>
+                        <p style="margin: 5px 0 0; color: var(--gray);">ETA: <strong>May 15, 2023</strong></p>
+                    </div>
+                </div>
                 
-                <h4>Delivery Progress:</h4>
+                <h4 style="color: var(--primary-dark); margin-bottom: 20px;">Delivery Progress:</h4>
+                
                 <div class="status-item">
                     <div class="status-icon active">
                         <i class="fas fa-check"></i>
                     </div>
-                    <div>
-                        <p><strong>Order Confirmed</strong></p>
-                        <p>May 5, 2023 10:30 AM</p>
+                    <div class="status-details">
+                        <h4>Order Confirmed</h4>
+                        <p>May 5, 2023 10:30 AM • Your order has been confirmed and payment processed.</p>
                     </div>
                 </div>
                 
@@ -834,9 +1689,9 @@
                     <div class="status-icon active">
                         <i class="fas fa-check"></i>
                     </div>
-                    <div>
-                        <p><strong>Health Check Completed</strong></p>
-                        <p>May 8, 2023 2:15 PM</p>
+                    <div class="status-details">
+                        <h4>Health Check Completed</h4>
+                        <p>May 8, 2023 2:15 PM • Veterinary examination passed with excellent results.</p>
                     </div>
                 </div>
                 
@@ -844,19 +1699,19 @@
                     <div class="status-icon active">
                         <i class="fas fa-check"></i>
                     </div>
-                    <div>
-                        <p><strong>Departure from Breeder</strong></p>
-                        <p>May 10, 2023 9:00 AM</p>
+                    <div class="status-details">
+                        <h4>Departure from Breeder</h4>
+                        <p>May 10, 2023 9:00 AM • Your pet has begun the journey in our climate-controlled vehicle.</p>
                     </div>
                 </div>
                 
                 <div class="status-item">
-                    <div class="status-icon">
+                    <div class="status-icon current">
                         <i class="fas fa-truck"></i>
                     </div>
-                    <div>
-                        <p><strong>In Transit</strong></p>
-                        <p>Expected arrival: May 15, 2023</p>
+                    <div class="status-details">
+                        <h4>In Transit</h4>
+                        <p>Current Location: Nashville, TN • Estimated arrival: May 15, 2023</p>
                     </div>
                 </div>
                 
@@ -864,10 +1719,14 @@
                     <div class="status-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <div>
-                        <p><strong>Delivery</strong></p>
-                        <p>Your pet will be delivered to your address</p>
+                    <div class="status-details">
+                        <h4>Delivery</h4>
+                        <p>Your pet will be delivered directly to your doorstep by our trained pet handler.</p>
                     </div>
+                </div>
+                
+                <div style="background: rgba(160, 217, 180, 0.1); padding: 15px; border-radius: 10px; margin-top: 25px; border-left: 4px solid var(--accent);">
+                    <p style="margin: 0; color: var(--dark);"><i class="fas fa-info-circle" style="color: var(--accent); margin-right: 10px;"></i> <strong>Live Updates:</strong> You'll receive photos and updates when your pet reaches major checkpoints.</p>
                 </div>
             </div>
         </div>
@@ -877,19 +1736,34 @@
         // Mobile menu toggle
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             const navMenu = document.getElementById('navMenu');
+            const navButtons = document.querySelector('.nav-buttons');
+            
             if (navMenu.style.display === 'flex') {
                 navMenu.style.display = 'none';
+                navButtons.style.display = 'none';
             } else {
                 navMenu.style.display = 'flex';
                 navMenu.style.flexDirection = 'column';
                 navMenu.style.position = 'absolute';
-                navMenu.style.top = '70px';
+                navMenu.style.top = '100%';
                 navMenu.style.left = '0';
                 navMenu.style.width = '100%';
                 navMenu.style.backgroundColor = 'white';
-                navMenu.style.padding = '20px';
-                navMenu.style.boxShadow = '0 10px 15px rgba(0,0,0,0.1)';
-                navMenu.style.gap = '15px';
+                navMenu.style.padding = '30px 25px';
+                navMenu.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+                navMenu.style.gap = '20px';
+                navMenu.style.zIndex = '1000';
+                
+                navButtons.style.display = 'flex';
+                navButtons.style.flexDirection = 'column';
+                navButtons.style.position = 'absolute';
+                navButtons.style.top = 'calc(100% + 220px)';
+                navButtons.style.left = '0';
+                navButtons.style.width = '100%';
+                navButtons.style.backgroundColor = 'white';
+                navButtons.style.padding = '25px';
+                navButtons.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+                navButtons.style.gap = '15px';
             }
         });
 
@@ -905,15 +1779,29 @@
 
         function openTrackingModal() {
             trackingModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
 
         function closeTrackingModal() {
             trackingModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
-        trackOrderBtn.addEventListener('click', openTrackingModal);
-        heroTrackBtn.addEventListener('click', openTrackingModal);
-        footerTrackBtn.addEventListener('click', openTrackingModal);
+        trackOrderBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openTrackingModal();
+        });
+        
+        heroTrackBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openTrackingModal();
+        });
+        
+        footerTrackBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openTrackingModal();
+        });
+        
         closeModal.addEventListener('click', closeTrackingModal);
 
         // Close modal when clicking outside
@@ -925,19 +1813,24 @@
 
         // Track order functionality
         trackBtn.addEventListener('click', function() {
-            const trackingNumber = document.getElementById('trackingNumber').value;
+            const trackingNumber = document.getElementById('trackingNumber').value.trim();
             
-            if (trackingNumber.trim() === '') {
-                alert('Please enter a tracking number');
-                return;
+            if (trackingNumber === '') {
+                // Show sample tracking
+                document.getElementById('trackingNumber').value = 'PC-789456123';
+                displayOrderNumber.textContent = 'PC-789456123';
+            } else {
+                displayOrderNumber.textContent = trackingNumber;
             }
             
-            // Show tracking status with entered tracking number
-            displayOrderNumber.textContent = trackingNumber;
+            // Show tracking status with animation
             trackingStatus.style.display = 'block';
+            trackingStatus.classList.add('animate__animated', 'animate__fadeInUp');
             
             // Scroll to tracking status
-            trackingStatus.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                trackingStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
         });
 
         // Live chat functionality
@@ -949,23 +1842,31 @@
         const chatBody = document.getElementById('chatBody');
 
         chatButton.addEventListener('click', function() {
-            if (chatWindow.style.display === 'flex') {
-                chatWindow.style.display = 'none';
-            } else {
-                chatWindow.style.display = 'flex';
-            }
+            chatWindow.classList.toggle('active');
+            // Remove pulse animation when chat is opened
+            chatButton.classList.remove('pulse');
         });
 
         closeChat.addEventListener('click', function() {
-            chatWindow.style.display = 'none';
+            chatWindow.classList.remove('active');
+            // Add pulse animation after a delay when chat is closed
+            setTimeout(() => {
+                chatButton.classList.add('pulse');
+            }, 3000);
         });
 
-        function addMessage(text, isIncoming) {
+        function addMessage(text, isIncoming, time = 'Just now') {
             const messageDiv = document.createElement('div');
             messageDiv.className = `chat-message ${isIncoming ? 'message-in' : 'message-out'}`;
-            messageDiv.textContent = text;
+            messageDiv.innerHTML = `
+                <div>${text}</div>
+                <div class="message-time">${time}</div>
+            `;
             chatBody.appendChild(messageDiv);
             chatBody.scrollTop = chatBody.scrollHeight;
+            
+            // Add animation
+            messageDiv.classList.add('animate__animated', 'animate__fadeInUp');
         }
 
         sendMessage.addEventListener('click', function() {
@@ -982,15 +1883,15 @@
             // Simulate bot response after a delay
             setTimeout(function() {
                 const responses = [
-                    "Thank you for your message. Our support team will respond shortly.",
-                    "Can you provide your order number so I can help you better?",
-                    "Is this related to a current delivery or a future order?",
-                    "I can help you with tracking, emergency support, or general questions. What do you need assistance with?"
+                    "Thanks for your message! Our support team typically responds within 2-3 minutes. In the meantime, would you like to track an order or learn about our available pets? 🐶",
+                    "I can help you with tracking, orders, or answer questions about our services. Can you provide your order number so I can assist you better? 📦",
+                    "Is this related to a current delivery or are you interested in adopting a new furry friend? We have puppies and kittens available! 🐱",
+                    "For urgent matters, you can also call our 24/7 emergency support line at 1-800-123-4567. Is there anything specific I can help you with? 📞"
                 ];
                 
                 const randomResponse = responses[Math.floor(Math.random() * responses.length)];
                 addMessage(randomResponse, true);
-            }, 1000);
+            }, 1000 + Math.random() * 1000);
         });
 
         // Allow sending message with Enter key
@@ -1001,7 +1902,62 @@
         });
 
         // Sample tracking number suggestion
-        document.getElementById('trackingNumber').placeholder = "Try: PC-789456123";
+        document.getElementById('trackingNumber').addEventListener('focus', function() {
+            if (this.value === '') {
+                this.placeholder = "Try: PC-789456123";
+            }
+        });
+        
+        // Add floating paw prints dynamically
+        function createPawPrints() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (section.classList.contains('hero') || section.classList.contains('features')) return;
+                
+                const pawCount = Math.floor(Math.random() * 3) + 2;
+                for (let i = 0; i < pawCount; i++) {
+                    const paw = document.createElement('div');
+                    paw.className = 'paw-print';
+                    paw.style.top = Math.random() * 80 + 10 + '%';
+                    paw.style.left = Math.random() * 80 + 10 + '%';
+                    paw.style.width = Math.random() * 30 + 20 + 'px';
+                    paw.style.height = paw.style.width;
+                    paw.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    paw.style.opacity = Math.random() * 0.1 + 0.05;
+                    section.appendChild(paw);
+                }
+            });
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('load', function() {
+            createPawPrints();
+            
+            // Add animations to elements on scroll
+            const animateElements = document.querySelectorAll('.feature-card, .pet-card, .testimonial-card');
+            animateElements.forEach(el => {
+                el.classList.add('animate__animated');
+            });
+            
+            // Auto-open chat after 10 seconds if not already open
+            setTimeout(() => {
+                if (!chatWindow.classList.contains('active')) {
+                    chatButton.classList.add('pulse');
+                }
+            }, 10000);
+        });
+        
+        // Add hover effect to pet cards
+        const petCards = document.querySelectorAll('.pet-card');
+        petCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
     </script>
 </body>
 </html>
