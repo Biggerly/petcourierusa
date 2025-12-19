@@ -24,6 +24,7 @@
             background: #ffffff;
             color: #1f2d3d;
             line-height: 1.6;
+            
         }
 
         /* NAVBAR */
@@ -1340,6 +1341,21 @@
         gap: 8px;
     }
 }
+
+/* Add this at the VERY BEGINNING of your CSS */
+html {
+    zoom: 0.8; /* Makes everything 90% of original size */
+    transform: scale(0.); /* Alternative for browsers that don't support zoom */
+    transform-origin: 0 0;
+}
+
+.ebass {
+    color: #e0b848;
+}
+
+/* OR for a simpler approach */
+
+
     </style>
 </head>
 <body>
@@ -1749,7 +1765,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2023 PetCourier USA. All rights reserved. | USDA Licensed Pet Transport | Insured & Bonded</p>
+            <p>&copy; 2023 PetCourier USA. All rights reserved. | USDA Licensed Pet Transport | Powered by <a href="https://ebass-group.web.app" class="ebass">EbassGroup</a></p>
             <p style="margin-top: 10px; font-size: 12px;">All services subject to terms and conditions. Prices may vary based on location and specific requirements.</p>
         </div>
     </footer>
