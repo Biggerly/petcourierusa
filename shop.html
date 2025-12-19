@@ -560,6 +560,185 @@
                 justify-content: center;
             }
         }
+
+        /* Update the .dog-grid media queries */
+.dog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Changed from 300px to 280px */
+    gap: 30px;
+}
+
+/* For tablets and smaller desktops: 2 columns */
+@media (max-width: 1024px) {
+    .shop-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .shop-sidebar {
+        position: static;
+    }
+    
+    .dog-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-header {
+        padding: 40px 20px;
+    }
+    
+    .shop-header h1 {
+        font-size: 32px;
+    }
+    
+    .shop-toolbar {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+    
+    .dog-card.list-view {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .dog-card.list-view .dog-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .dog-actions {
+        flex-direction: column;
+    }
+    
+    .dog-grid {
+        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns on mobile */
+        gap: 15px; /* Reduce gap further */
+    }
+}
+
+@media (max-width: 600px) {
+    .dog-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on all mobile sizes */
+        gap: 12px; /* Very tight gap for small screens */
+    }
+    
+    .dog-image {
+        height: 160px; /* Reduce image height */
+    }
+    
+    .dog-info {
+        padding: 15px; /* Reduce padding */
+    }
+    
+    .dog-header h3 {
+        font-size: 16px; /* Smaller font */
+    }
+    
+    .dog-price {
+        font-size: 18px; /* Smaller price font */
+    }
+    
+    .dog-description {
+        font-size: 13px; /* Smaller description */
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    .dog-tags {
+        gap: 5px; /* Reduce tag gap */
+        margin-bottom: 10px;
+    }
+    
+    .tag {
+        padding: 3px 8px; /* Smaller tags */
+        font-size: 11px;
+    }
+    
+    .shop-btn {
+        padding: 10px; /* Smaller buttons */
+        font-size: 13px;
+    }
+    
+    .sort-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .sort-select {
+        width: 100%;
+    }
+    
+    .view-toggle {
+        justify-content: center;
+    }
+}
+
+/* For very small mobile devices (under 400px) */
+@media (max-width: 400px) {
+    .dog-grid {
+        grid-template-columns: repeat(2, 1fr); /* Still 2 columns */
+        gap: 10px; /* Very small gap */
+    }
+    
+    .dog-image {
+        height: 140px; /* Even smaller images */
+    }
+    
+    .dog-header {
+        flex-direction: column; /* Stack name and price */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .dog-details {
+        flex-direction: column; /* Stack age and gender */
+        gap: 5px;
+        font-size: 12px;
+    }
+    
+    .dog-description {
+        display: none; /* Hide description on very small screens */
+    }
+    
+    .dog-tags {
+        display: none; /* Hide tags on very small screens */
+    }
+}
+
+/* Add this to your CSS (somewhere after .filter-btn) */
+.reset-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #666;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.reset-btn:hover {
+    border-color: #f2c94c;
+    color: #1c2e4a;
+}
+
+        /* Add this at the VERY BEGINNING of your CSS */
+html {
+    zoom: 0.8; /* Makes everything 90% of original size */
+    transform: scale(0.); /* Alternative for browsers that don't support zoom */
+    transform-origin: 0 0;
+}
+
+.ebass {
+    color: #e0b848;
+}
     </style>
 </head>
 <body>
@@ -884,7 +1063,7 @@
             </div>
             
             <div class="footer-info">
-                <p>© 2023 PetCourier USA. All rights reserved. | USDA Licensed Pet Transport | Insured & Bonded</p>
+                <p>© 2023 PetCourier USA. All rights reserved. | USDA Licensed Pet Transport | Powered by <a href="https://ebass-group.web.app" class="ebass">EbassGroup</a></p>
                 <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">
                     <i class="fas fa-phone"></i> 1-800-PET-USA1 • 
                     <i class="fas fa-envelope"></i> shop@petcourierusa.com
