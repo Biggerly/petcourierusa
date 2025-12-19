@@ -530,7 +530,7 @@
     max-width: 600px;
 }
 
-/* Responsive footer */
+/* Responsive footer
 @media (max-width: 600px) {
     .footer-links {
         gap: 15px;
@@ -540,6 +540,17 @@
     .chat-footer {
         padding: 30px 15px;
     }
+} */
+
+/* Add this at the VERY BEGINNING of your CSS */
+html {
+    zoom: 0.8; /* Makes everything 90% of original size */
+    transform: scale(0.); /* Alternative for browsers that don't support zoom */
+    transform-origin: 0 0;
+}
+
+.ebass {
+    color: #e0b848;
 }
     </style>
 </head>
@@ -718,7 +729,7 @@
         <div class="footer-divider"></div>
         
         <div class="footer-info">
-            <p>© 2023 PetCourier USA. All rights reserved.</p>
+            <p>© 2023 PetCourier USA. All rights reserved.  Powered by <a href="https://ebass-group.web.app" class="ebass">EbassGroup</a></p>
             <p>USDA Licensed Pet Transport • Insured & Bonded • Based in Atlanta, Georgia</p>
             <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">
                 <i class="fas fa-phone"></i> 1-800-PET-USA1 • 
